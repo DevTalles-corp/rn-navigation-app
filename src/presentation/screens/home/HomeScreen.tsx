@@ -1,12 +1,13 @@
-import { Pressable, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { globalStyles } from '../../theme/theme';
-import { useNavigation } from '@react-navigation/native';
+import { type NavigationProp, useNavigation } from '@react-navigation/native';
 import { PrimaryButton } from '../../components/shared/PrimaryButton';
+import type { RootStackParams } from '../../routes/StackNavigator';
 
 
 export const HomeScreen = () => {
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<RootStackParams>>();
 
 
 
@@ -20,12 +21,12 @@ export const HomeScreen = () => {
       </Pressable> */}
 
       <PrimaryButton 
-        onPress={ () => navigation.navigate('Products' as never)  }
+        onPress={ () => navigation.navigate('Products')  }
         label="Productos"
       />
 
       <PrimaryButton 
-        onPress={ () => navigation.navigate('Settings' as never)  }
+        onPress={ () => navigation.navigate('Settings')  }
         label="Settings"
       />
 
